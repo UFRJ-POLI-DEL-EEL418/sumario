@@ -1,7 +1,7 @@
 # Sumário
 (Portuguese word for syllabus in English)
 
-Prerequisitos ou desejável:
+<b>1. Prerequisitos ou desejável:</b>
 C++, Sistemas Operacionais, redes TCP/IP, BD & SQL.
 
 Ementa (proposta):
