@@ -1,2 +1,3 @@
-# sumario
-Portuguese word for syllabus in English.
+# Sumário
+(Portuguese word for syllabus in English)
+
