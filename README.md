@@ -7,7 +7,11 @@ C++, Sistemas Operacionais, redes TCP/IP, BD & SQL.
 <b>2. Ementa:</b>
 A história de Java, compilação e execução, pacotes, a biblioteca básica de Java, multitarefa, arquivos (streams), soquetes e rede, cliente-servidor, o protocolo HTTP, o servidor Tomcat, servlets, páginas JSP, HTML/CSS/Javascript, modelo 1 e modelo 2 (MVC) de aplicações web, tags customizadas, JSTL, bases de dados e JDBC, Javascript, DOM, JSON, AJAX, jQuery, formulários multipart e subida de arquivos, REST, Websockets, Node.js.
 
-<b>3. Avaliação:</b>
+<b>3. Comunicação:</b>
+* [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/advanced-js/syllabus?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+        * It sends message digests to people who aren't active in the room, so feel free to ask a question even if no one's around.
+        * 
+<b>4. Avaliação:</b>
 A avaliação será feita com base em três trabalhos:
 - Os trabalhos serão individuais.
 - O critério de nota é: quem atender aos requisitos mínimos do que foi pedido, sem acrescentar nenhuma contribuição pessoal a mais, garante pelo menos uma nota 5,0.
