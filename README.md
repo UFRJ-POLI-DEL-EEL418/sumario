@@ -9,7 +9,7 @@ A história de Java, compilação e execução, pacotes, a biblioteca básica de
 
 <b>3. Comunicação:</b>
 * [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/UFRJ-POLI-DEL-EEL418):
-Envie uma mensagem para os usuários da sala UFRJ-POLI-EE418, que poderão le-la agora ou mais tarde.
+Envie uma mensagem para os usuários da sala UFRJ-POLI-EE418 (https://gitter.im/UFRJ-POLI-DEL-EEL418), que poderão le-la agora ou mais tarde.
 
 <b>4. Avaliação:</b>
 A avaliação será feita com base em três trabalhos:
