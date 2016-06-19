@@ -8,7 +8,7 @@ C++, Sistemas Operacionais, redes TCP/IP, BD & SQL.
 A história de Java, compilação e execução, pacotes, a biblioteca básica de Java, multitarefa, arquivos (streams), soquetes e rede, cliente-servidor, o protocolo HTTP, o servidor Tomcat, servlets, páginas JSP, HTML/CSS/Javascript, modelo 1 e modelo 2 (MVC) de aplicações web, tags customizadas, JSTL, bases de dados e JDBC, Javascript, DOM, JSON, AJAX, jQuery, formulários multipart e subida de arquivos, REST, Websockets, Node.js.
 
 <b>3. Comunicação:</b>
-* [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/UFRJ-POLI-DEL-EEL418):
+* [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/UFRJ-POLI-DEL-EEL418/sumario/):
 Envie uma mensagem para os usuários da sala UFRJ-POLI-EE418 (https://gitter.im/UFRJ-POLI-DEL-EEL418), que poderão le-la agora ou mais tarde.
 
 <b>4. Avaliação:</b>
