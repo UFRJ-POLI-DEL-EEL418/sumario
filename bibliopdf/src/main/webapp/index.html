@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BiblioPDF2</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" href="css/bibliopdf.css" type="text/css"/>
+
+        <!-- script type="text/javascript" src="js/bibliopdf.js"></script -->
+    </head>
+
+    <body>
+        <div id="idLoading"></div>
+
+        <div id="idDivCabecalho">
+            <span id="idLabel1">Segundo Trabalho 2016-1</span><br>
+                <div id="menuEntrar"  class="Menu">
+                    ENTRAR
+                </div>
+                <div id="menuSair"  class="Menu">
+                    SAIR
+                </div>
+                <div id="menuCatalogacao"  class="Menu">
+                    CATALOGAÇÃO
+                </div>
+                <div id="menuBusca"  class="Menu">
+                    BUSCA
+                </div>
+        </div>
+
+        <!--==========================================================================-->
+        <div id="idDivLogin">
+            <br>
+            <br>
+            <br>
+            Usuário
+            <br>
+            <input id="idUsuario" type="text"/><br>
+            Senha
+            <br>
+            <input id="idSenha"   type="password"/><br>
+            <br>
+            <div id="idRespAutorizacao"></div>
+            <br>
+            <br>
+            <div id="idLabel2">v0.1 Beta&copy;J.L.S.Leão, 2015 - jorge.leao@ufrj.br</div>
+            <br>
+            <br>
+            <br>
+            Datas e horários no formato ISO8601<br>
+            (local combined date and time in UTC, without milliseconds, without timezone)
+            <br>
+            <br>
+            Página carregada em:<br>
+            <span id="idCurrentTime"></span>
+            <br>
+            <br>
+            <span>
+                Icons made by
+                <a href="http://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a>
+                from
+                <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>
+                is licensed by
+                <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>
+            </span>
+        </div>
+
+        <!--==========================================================================-->
+        <div id="idDivBusca">
+            <table id="tabelaBusca" class="center"  border="0">
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td colspan="2" class="titulo">
+                        BUSCA
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td id="idMsgDialogo2" colspan="4">
+                        Mensagem de dialogo da página de busca...
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Patrimônio
+                    </td>
+                    <td colspan="2">
+                        <input type="text"     id="idpatrimonio2"/>
+                    </td>
+                    <td class="alinha_esquerda">
+                        <input type="checkbox" id="idcheckpatrimonio"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Título
+                    </td>
+                    <td colspan="2">
+                        <input type="text"     id="idtitulo2"/>
+                    </td>
+                    <td class="alinha_esquerda">
+                        <input type="checkbox" id="idchecktituloOU"/>(OU)
+                        <input type="checkbox" id="idchecktituloE"/>(E)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Autoria
+                    </td>
+                    <td colspan="2">
+                        <input type="text"     id="idautoria2"/>
+                    </td>
+                    <td class="alinha_esquerda">
+                        <input type="checkbox" id="idcheckautoriaOU"/>(OU)
+                        <input type="checkbox" id="idcheckautoriaE"/>(E)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Veículo
+                    </td>
+                    <td colspan="2">
+                        <input type="text"     id="idveiculo2"/>
+                    </td>
+                    <td class="alinha_esquerda">
+                        <input type="checkbox" id="idcheckveiculoOU"/>(OU)
+                        <input type="checkbox" id="idcheckveiculoE"/>(E)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Data da publicação
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        de:  <input type="text"    id="iddatapublicacao21"/>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;
+                        até: <input type="text"    id="iddatapublicacao22"/>
+                    </td>
+                    <td class="alinha_esquerda">
+                        <input type="checkbox" id="idcheckdatapublicacaoOU"/>(OU)
+                        <input type="checkbox" id="idcheckdatapublicacaoE"/>(E)
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Palavras-chave
+                    </td>
+                    <td colspan="2">
+                        <input type="text"     id="idpalchave2"/>
+                    </td>
+                    <td class="alinha_esquerda">
+                        <input type="checkbox" id="idcheckpalchaveOU"/>(OU)
+                        <input type="checkbox" id="idcheckpalchaveE"/>(E)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2" style="text-align:center;">
+                        <input type="button" class="botoes" value="BUSCAR" id="idBuscar"/>
+                        <input type="button" class="botoes" value="LIMPAR" id="idLimparBusca"/>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Resultados
+                    </td>
+                    <td colspan="3">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <div id="idTabelaResultados">
+                            &nbsp;
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2" style="text-align:center;">
+                        Nro. de registros encontrados: 0
+                        <span id="idNroRows"></span>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2" style="text-align:center;">
+                        <input type="button" value="< Página anterior" id="idPagAnterior" style="width:130px;"/>
+                        <input type="text" id="idPaginaDestino" value="0" style="width:70px;text-align:center;">
+                        <input type="button" value="Próxima página >"  id="idPagProxima"  style="width:130px;"/>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+
+        <!--==========================================================================-->
+        <div id="idDivCatalogacao">
+            <table id="tabelaCatalogacao" class="center" border="0">
+                <tr>
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td class="titulo">
+                        CATALOGAÇÃO
+                    </td>
+                    <td>
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td id="idMsgDialogo3" colspan="3">
+                        Mensagem de dialogo da página de catalogação...
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        <input type="button" value="Anterior" id="idItemAnterior" class="botoesProxAnt"/>
+                        &nbsp;Patrimônio
+                    </td>
+                    <td>
+                        <input type="text" id="idpatrimonio3" readonly/>
+                    </td>
+                    <td class="alinha_esquerda">
+                        <input type="button" value="Próximo" id="idItemProximo" class="botoesProxAnt"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Título
+                    </td>
+                    <td>
+                        <input type="text" id="idtitulo3" readonly/>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Autoria
+                    </td>
+                    <td>
+                        <input type="text" id="idautoria3" readonly/>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Veículo
+                    </td>
+                    <td>
+                        <input type="text" id="idveiculo3" readonly/>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Data da publicação
+                    </td>
+                    <td>
+                        <input type="text" id="iddatapublicacao3" readonly/>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="alinha_direita">
+                        Palavras-chave
+                    </td>
+                    <td>
+                        <input type="text" id="idpalchave3" readonly/>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align:center;vertical-align:bottom;">
+                        <input type="button" class="botoes" id="idEditar" value="EDITAR"/>
+                        <input type="button" class="botoes" id="idSalvarAtual" value="SALVAR MODIFICAÇÕES"/>
+                        <input type="button" class="botoes" id="idSalvarNovo" value="SALVAR COMO NOVO"/>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align:center;">
+                        <input type="button" class="botoes" id="idDownload" value="DOWNLOAD"/>
+                        <input type="button" class="botoes" id="idLimparCat" value="LIMPAR"/>
+                        <input type="button" class="botoes" id="idExcluir" value="EXCLUIR"/>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--==========================================================================-->
+    </body>
+</html>

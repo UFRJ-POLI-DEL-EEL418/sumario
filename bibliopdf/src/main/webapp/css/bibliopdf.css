@@ -1,0 +1,224 @@
+
+body {
+    margin:0px;
+    background-color:#eeeeee;
+    font-family:arial;
+    text-align:center;
+}
+
+#idDivCabecalho {
+    margin-left:auto;
+    margin-right:auto;
+    height:55px;
+    background-color:lightgray;
+    text-align:center;
+    border-bottom:1px solid gray;
+}
+
+#idDivLogin {
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    width:980px;
+    border:1px solid #eeeeee;    
+}
+
+#idDivBusca {
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    width:980px;
+    border:1px solid #eeeeee;    
+}
+
+#idDivCatalogacao {
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+    width:980px;
+    border:1px solid #eeeeee;    
+}
+
+.botoesProxAnt{
+    width:70px;
+}
+
+.botoes{
+    width:175px;
+}
+
+input[type="text"]{
+    width:530px;
+}
+
+#idTabelaResultados {
+    background-color:white;
+    border:1px solid gray;
+    width:750px;
+    height:200px;
+    overflow-y:scroll;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#idRespAutorizacao {
+    color:black;
+    font-weight:bold;
+}
+
+#idMsgDialogo2 {
+    text-align:center;
+}
+
+#idMsgDialogo3 {
+    width:890px;
+    text-align:center;
+}
+
+.loading{
+    background: transparent url('../images/ajax_loader3.gif') center center no-repeat; /* lembrando que o url é relativo ao arquivo .css */ 
+    height: 75px; /* Importante apenas para garantir que a div possui altura para exibir a imagem */
+}
+
+
+#idLabel1 {
+    font-size:18pt;
+    color:black;
+    font-weight:bold;
+}
+
+#idLabel2 {
+    font-size:12pt;
+    color:blue;
+    font-weight:normal;
+}
+
+#idUsuario {
+    width:200px;
+}
+
+#idSenha {
+    width:200px;
+}
+
+#idEntrar {
+    text-decoration:none;
+    color:red;
+    font-weight:bold;
+}
+
+#idCurrentTime {
+    font-weight:bold;
+    font-size:14pt;
+}
+
+#tabelaBusca td{
+    width:275px;
+}
+
+#tabelaBusca td+td{
+    width:275px;
+}
+
+#tabelaBusca td+td+td{
+    width:275px;
+}
+
+#tabelaBusca td+td+td+td{
+    width:275px;
+}
+
+#tabelaCatalogacao td{
+    width:275px;
+}
+
+#tabelaCatalogacao td+td{
+    width:550px;
+}
+
+#tabelaCatalogacao td+td+td{
+    width:275px;
+}
+
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+tr{
+    height:30px;
+}
+
+.alinha_direita{
+    text-align:right; 
+}
+
+#idNroRows{
+    min-width:60px;
+}
+
+#idLoading {
+    width:75px;
+    height:75px;
+    position:absolute;
+    float:right;
+    top:140px;
+    right:145px;
+    z-index:100;
+}
+
+#iddatapublicacao21 {
+    width:210px;
+}
+
+#iddatapublicacao22 {
+    width:210px;
+}
+
+.titulo{
+    text-align:center;
+    font-weight:bold;
+    font-size:22pt;    
+}
+
+.Menu{
+    position:relative;
+    top:6px; 
+    width:140px;
+    background-color:lightgray;
+    float:right;    
+}
+
+.mensagemDialogoVerde{
+    text-align:center;
+    vertical-align:middle;
+    background:#ccffcc;
+    background:radial-gradient(#ccffcc,#eeeeee);
+    color:green;
+    font-weight:bold;
+    font-style:italic;
+}
+
+.mensagemDialogoVermelho{
+    text-align:center;
+    vertical-align:middle;
+    background:#ffcccc;
+    background:radial-gradient(#ffcccc,#eeeeee);
+    color:red;
+    font-weight:bold;
+    font-style:italic;
+}
+
+.mensagemDialogoAmarelo{
+    text-align:center;
+    vertical-align:middle;
+    background:#ffff66;
+    background:radial-gradient(#ffff66,#eeeeee);
+    color:brown;
+    font-weight:bold;
+    font-style:italic;
+}
+
+.alinha_esquerda {
+    text-align:left;
+}
