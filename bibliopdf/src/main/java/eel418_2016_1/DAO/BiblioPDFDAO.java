@@ -1,22 +1,22 @@
 package eel418_2016_1.DAO;
 
-import eel418_2016_1.DTOs.*;
+import eel418_2016_1.DTOs.RespostaCompletaDTO;
+import eel418_2016_1.DTOs.RespostaDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import utils.*;
+import javax.json.JsonObject;
+import utils.Utils;
 
-public class ReferenciasBibliograficas extends BaseDAO{
+public class BiblioPDFDAO extends BaseDAO {
 
 //------------------------------------------------------------------------------    
-    public ArrayList<ReferenciaBibliografica> buscarListaPorPalavraDoTitulo(DadosDaBusca dados){
-        ArrayList<ReferenciaBibliografica> lista = new ArrayList<>();
-        ReferenciaBibliografica ref = null;
+    public RespostaCompletaDTO buscarListaPorPalavraDoTitulo(JsonObject dados){
+        RespostaCompletaDTO listaRefsDTO = new RespostaCompletaDTO();
+        RespostaDTO umaRefDTO = null;
 
         String[] palavrasDaBusca = extrairPalavrasDaBusca(dados);
         String preparedStatement = prepararComandoSQL(palavrasDaBusca);
-        
         try(Connection conexao = getConnection()){
             PreparedStatement comandoSQL = conexao.prepareStatement(preparedStatement);
             
@@ -26,21 +26,22 @@ public class ReferenciasBibliograficas extends BaseDAO{
             
             ResultSet rs = comandoSQL.executeQuery();
             while(rs.next()){
-                ref = new ReferenciaBibliografica();
-                ref.setSerialno(rs.getLong("patrimonio"));
-                ref.setTitulo(rs.getString("titulo"));
-                ref.setAutoria(rs.getString("autoria"));
-                lista.add(ref);
+                umaRefDTO = new RespostaDTO();
+                umaRefDTO.setPatrimonio(Long.toString(rs.getLong("patrimonio")));
+                umaRefDTO.setTitulo(rs.getString("titulo"));
+                umaRefDTO.setAutoria(rs.getString("autoria"));
+                listaRefsDTO.addResposta(umaRefDTO);
             }
         }catch(Exception e){
             e.printStackTrace();
         }
         
-        return lista;
+        return listaRefsDTO;
     }
 //------------------------------------------------------------------------------    
-    private String[] extrairPalavrasDaBusca(DadosDaBusca dados){
-        String busca = dados.getTitulo();
+    private String[] extrairPalavrasDaBusca(JsonObject dados){
+        JsonObject dados2 = dados.getJsonObject("titulo");
+        String busca = dados2.getString("texto");
         busca = Utils.removeDiacriticals(busca);
         String[] temp = busca.split(" ");
         for(int i=0;i<temp.length;i++){
@@ -84,5 +85,44 @@ GROUP BY T1.patrimonio, T1.titulo, T1.autoria ORDER BY nrohits DESC, titulo ASC;
         return comando;
     }    
 //------------------------------------------------------------------------------
-}
+
+    public String salvarNovo(JsonObject dados) {
+        ResultSet rst = null;
+        long patrimonio = 0L;
+        String titulo = dados.getString("titulo").trim();
+        titulo = titulo.replaceAll("\\s+", " ");
         
+        try (Connection conexao = getConnection()) {
+            // BEGIN TRANSACTION
+            conexao.setAutoCommit(false);
+            // PRIMEIRA TABELA
+            PreparedStatement comandoSQL = conexao.prepareStatement(
+            "INSERT INTO dadoscatalogo (titulo,autoria) VALUES(?,?) "+
+            "RETURNING patrimonio;");
+            
+            comandoSQL.setString(1, titulo);
+            comandoSQL.setString(2, dados.getString("autoria"));
+            rst = comandoSQL.executeQuery();
+            rst.next();
+            patrimonio = rst.getLong("patrimonio");
+            // SEGUNDA TABELA
+            String[] palavrasDaBusca = extrairPalavrasDaBusca(dados);
+            for (String cadaPalavra : palavrasDaBusca) {
+                comandoSQL = conexao.prepareStatement(
+            "INSERT INTO palavrastitulonormal (palavra_titulo_normal,patrimonio) "+
+            "VALUES(?,?);");
+                comandoSQL.setString(1, cadaPalavra);
+                comandoSQL.setLong(2, patrimonio);
+                comandoSQL.executeUpdate();
+            }
+            // COMMIT TRANSACTION
+            conexao.commit();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "{\"patrimonio\":\""+Long.toString(patrimonio)+"\"}";
+    }
+
+//------------------------------------------------------------------------------
+}
