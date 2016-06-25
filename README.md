@@ -1,6 +1,8 @@
 # Sumário
 (Portuguese word for syllabus in English)
 
+<span style="color:red;font-weight:bold;">Atenção: a classe do modelo foi alterada no exemplo. Agora ela já foi testada.</span>
+
 <b>1. Prerequisitos ou desejável:</b>
 C++, Sistemas Operacionais, redes TCP/IP, BD & SQL.
 
