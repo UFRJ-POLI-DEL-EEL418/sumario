@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/exemploAutForm01">
+
+    <Resource 
+      name="jdbc/authority"
+      url="jdbc:postgresql://127.0.0.1:5432/usuariossenhas"
+      username="postgres"
+      password="abracadabra"
+
+      auth="Container"
+      driverClassName="org.postgresql.Driver"
+      logAbandoned="false"
+      maxActive="20"
+      maxIdle="10"
+      maxWait="-1"
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      type="javax.sql.DataSource"
+    />
+
+    <Realm 
+      name="exemploAutForm01"  
+      debug="99"
+      localDataSource="true"
+      className="org.apache.catalina.realm.DataSourceRealm"
+      dataSourceName="jdbc/authority"
+      userTable="usuarios" 
+      userNameCol="usuario" 
+      userCredCol="senha"
+      userRoleTable="grupos" 
+      roleNameCol="grupo"
+    />    
+
+</Context>    
+    
+    
+        
+    
