@@ -1,5 +1,5 @@
 # Sumário
-(Portuguese word for syllabus in English)
+(Portuguese word for syllabus (latin) used in English)
 
 Course web page: http://www.lpc.ufrj.br/~leao/eel418/2016-2/eel418-2016-2.html
 
