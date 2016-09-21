@@ -1,6 +1,7 @@
 # Sumário
 (Portuguese word for syllabus in English)
 
+Course web page: http://www.lpc.ufrj.br/~leao/eel418/2016-2/eel418-2016-2.html
 
 <b>1. Prerequisitos ou desejável:</b>
 C++, Sistemas Operacionais, redes TCP/IP, BD & SQL.
