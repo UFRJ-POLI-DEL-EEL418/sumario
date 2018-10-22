@@ -1,7 +1,7 @@
 # Sumário
 (Portuguese word for syllabus (latin) used in English)
 
-Course web page: http://www.lpc.ufrj.br/~leao/eel418/2016-2/eel418-2016-2.html
+Course web page: https://jorgeleao.github.io/eel418/
 
 <b>1. Prerequisitos ou desejável:</b>
 C++, Sistemas Operacionais, redes TCP/IP, BD & SQL.
